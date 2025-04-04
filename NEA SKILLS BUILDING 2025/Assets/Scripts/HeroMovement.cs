@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeroMovement : MonoBehaviour {
 
 	Rigidbody2D rb;
 	float speed;
+	public int lives;
+	public bool vulnerable;
+	SpriteRenderer SR;
 
 	// Use this for initialization
 	void Start () {
 		speed = 5.1f;
 		rb = GetComponent<Rigidbody2D> ();
+		lives = 2;
+		SR = GetComponent<SpriteRenderer> ();
 	}
 	
 	// Update is called once per frame
@@ -29,5 +35,38 @@ public class HeroMovement : MonoBehaviour {
 	{
 		Debug.Log ("SPIKED RECIEVED!");
 		transform.SetPositionAndRotation (new Vector3 (-5.58f,1.34f, 0), Quaternion.identity);
+		setLives ();
+	}
+	public void setLives()
+	{
+		lives -= 1;
+
+		if (lives <= 0 || vulnerable==true )
+		{
+			Debug.Log ("End of game");
+			SceneManager.LoadScene ("Lost");
+		}
+	}
+	private void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.tag == "extraLife") {
+			lives += 1;
+			Destroy (other.gameObject);
+		}
+		else if (other.gameObject.tag == "vulnerable")
+		{
+			Destroy (other.gameObject);
+			vulnerable = true;
+			Debug.Log ("vulnerrable = true!");
+			StartCoroutine ("VulnerableDeBuff");
+			SR.color = Color.red;
+		}
+	}
+	IEnumerator VulnerableDeBuff()
+	{
+		yield return new WaitForSeconds (5f);
+		vulnerable = false;
+		Debug.Log ("vulnerable = false!");
+		SR.color = Color.white;
 	}
 }
