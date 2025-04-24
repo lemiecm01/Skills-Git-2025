@@ -29,7 +29,7 @@ public class TextController : MonoBehaviour {
 		gameTimer.text = "Time: " + Time.timeSinceLevelLoad.ToString ("0.00");
 
 		if (totalGems.Length == 0) {
-			Hero.SendMessage ("SpawnAlter");
+			Hero.SendMessage ("SpawnAltar");
 		}
 	}
 }
