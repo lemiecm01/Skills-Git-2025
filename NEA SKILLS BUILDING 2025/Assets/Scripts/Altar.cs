@@ -4,23 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-
-
 public class Altar : MonoBehaviour {
 	// Use this for initialization
+
 	void Start () {
 	}
-	
 	// Update is called once per frame
 	void Update () {
 	}
 
 private void OnCollisionEnter2D(Collision2D other)
+
 	{
-		if (other.gameObject.tag == "Player")
+		if (SceneManager.GetActiveScene ().name == "Levels Tutorial" && other.gameObject.tag == "Player") {
+			SceneManager.LoadScene ("Level 2");
+		} 
+		else
 		{
-			Debug.Log ("End of game");
-			SceneManager.LoadScene ("Won");
+			SceneManager.LoadScene("Won");
 		}
 }
 }
