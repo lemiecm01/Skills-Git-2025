@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class PlayerPrefsOutput : MonoBehaviour {
 
 	public TextMeshPro TxtOutput;
 
@@ -16,4 +17,11 @@ public class NewBehaviourScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void ClickedButtonBACK(){
+		Debug.Log ("Button Back clicked!");
+		SceneManager.LoadScene ("Navigation");
+	}
+
 }
+
