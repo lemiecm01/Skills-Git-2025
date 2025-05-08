@@ -159,3 +159,6 @@ X:\Skills-Git-2025\NEA SKILLS BUILDING 2025\Temp\bin\Debug\UnityEngine.HoloLens.
 X:\Skills-Git-2025\NEA SKILLS BUILDING 2025\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
 X:\Skills-Git-2025\NEA SKILLS BUILDING 2025\obj\Debug\Assembly-CSharp.dll
 X:\Skills-Git-2025\NEA SKILLS BUILDING 2025\obj\Debug\Assembly-CSharp.pdb
+X:\Skills-Git-2025\NEA SKILLS BUILDING 2025\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll
+X:\Skills-Git-2025\NEA SKILLS BUILDING 2025\Temp\bin\Debug\UnityEngine.WebGLModule.dll
+X:\Skills-Git-2025\NEA SKILLS BUILDING 2025\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.xml
