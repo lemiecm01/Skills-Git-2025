@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class swapcamera : MonoBehaviour {
 
-	public Camera minimap;
+	public Camera Minimap;
 	public Camera Maincamera;
 
-	void update(){
-		if (Input.GetKey (KeyCode.M)) {
-			Maincamera.enabled = false;
-			minimap.enabled = true;
-		} else if (Input.GetKey (KeyCode.N)) {
+	void Update(){
+		if (Input.GetKeyDown (KeyCode.C)) {
 			Maincamera.enabled = true;
-			minimap.enabled = false;
+			Minimap.enabled = false;
+		}
+		if (Input.GetKeyDown (KeyCode.M)) {
+			Maincamera.enabled = false;
+			Minimap.enabled = true;
 		}
 	}
+
 }
