@@ -10,6 +10,7 @@ TagManager:
   - leftMarker
   - rightMarker
   - minimap
+  - topdown tilemap
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: foreground
     uniqueID: 1727522187
+    locked: 0
+  - name: characters
+    uniqueID: 4173317247
     locked: 0
